@@ -1,0 +1,24 @@
+
+        <div class="header-container">
+            <header class="wrapper clearfix">
+                <h1 class="title">{{ site.title }}</h1>
+                <nav>
+                    <ul>
+                        <li><a href="{{ site.baseurl }}/">Home</a></li>
+
+                        {% if site.github_username %}
+
+                        <li><a href="https://github.com/{{ site.github_username }}">GitHub</a></li>
+
+                        {% endif %}
+
+                        {% if site.twitter_username %}
+
+                        <li><a href="https://twitter.com/{{ site.twitter_username }}">Twitter</a></li>
+
+                        {% endif %}
+                        
+                    </ul>
+                </nav>
+            </header>
+        </div>
