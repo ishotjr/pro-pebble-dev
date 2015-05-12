@@ -1,0 +1,12 @@
+---
+layout: post
+title: "Continuous Integration with Travis CI"
+date:   2015-05-11 8:35:42
+# categories: pebble
+---
+
+[Continuous Integration](http://en.wikipedia.org/wiki/Continuous_integration) has continued to gain popularity in recent years, and is easier than ever with hosted solutions like [Travis CI](https://travis-ci.org/) which obviate the need for provisioning a server and installing and configuring a more traditional CI tool like [Jenkins](http://jenkins-ci.org/).  Travis CI uses GitHub Webhooks to initiate builds, and is free for open-source repositories, so the barrier to entry is trivially low for supported languages!
+
+The barrier for Pebble developers has dropped significantly with [sGerli](https://github.com/sGerli)'s new [pBuild](https://github.com/sGerli/pBuild) tool.  Building on [Sawyer Pangborn](https://github.com/spangborn)'s [travis-ci-pebble](https://github.com/spangborn/travis-ci-pebble) for earlier Pebble SDK versions, pBuild consists of just three simple files which are added to your Pebble app's existing repo, and once the required environment variables have been set on the Travis side, each subsequent push results in an entire build environment being brought up to automatically execute your build, then torn back down without lifting a finger (other than the one you were already going to have to lift to initiate that push)!  pBuild is just two short scripts and a configuration file, but by taking care of all of the SDK/toolchain/dependency/environment details, you are left with a springboard from which further automation, such as testing, uploading of [build artifacts](http://docs.travis-ci.com/user/uploading-artifacts/) or [specific files to S3](http://docs.travis-ci.com/user/deployment/s3/#Deploy-From-Only-One-Folder), or even [automated GitHub Releases](http://docs.travis-ci.com/user/deployment/releases/) is possible.  Oh, and of course you can add a snazzy little [Build Status Image](http://docs.travis-ci.com/user/status-images/) to your repo! [![pw-dos Build Status](https://travis-ci.org/ishotjr/pw-dos.svg?branch=master)](https://travis-ci.org/ishotjr/pw-dos)
+
+*[Check out how easy it is](https://github.com/ishotjr/pw-dos/commit/f5bb6e32d90f8176a92470d711911db142c8d31d) to add uploading of build artifacts to S3, given the base script!* :triumph: :floppy_disk:
